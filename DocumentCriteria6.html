@@ -1,0 +1,70 @@
+<iframe name="NameSearchForm" src="SearchForm2.php" style="float:right;width:25%;min-height:886px;overflow-y:scroll;margin-right:30px;" frameborder=0 class="drop-shadow curved h1"></iframe>
+<div class="container" style="margin-left:20px;font-size:1em;float:left;width:63%;">
+<h2>Advanced Search: Digital Image Edition</h2>
+<div class="important"><a href="NamesSearch5.php">Quick Search</a> | <a href="/srchdocs.htm" target="_blank">Help</a></div>
+<div class="drop-shadow curved h1">
+	<form style="margin-bottom:0;">
+	<ol style="padding-left:20px;">
+	<li>There are several ways you may want to search the database: <strong>by person or company name</strong>, <strong>by date range</strong>, or <strong>by document types</strong>
+	<li>After you select a name on the left, it will appear below.
+	<li>You can combine up to 4 name searches which will produce an AND search, not OR.
+	<li>You can list the results by one of the options displayed, with date order as default.
+	<li>You can additionally limit your search to a starting and end date, or document type. 
+	</ol>
+	<p>Person or Company</p>
+	<div style="display:block;width:49%;float:left;">
+		<input type="button" maxlength=10 onClick="setName('', ' ', 0)" style="display:block;float:left;margin-right:10px;"> 
+		<div id="name0IE"></div>
+	</div>
+	<div style="display:block;width:49%;float:left;">
+		<input type="button" maxlength=10 onClick="setName('', ' ', 1)" style="display:block;float:left;margin-right:10px;"> 
+		<div id="name1IE"></div>
+	</div>
+	<div style="clear:left;"></div>
+	<div style="display:block;width:49%;float:left;">
+		<input type="button" maxlength=10 onClick="setName('', ' ', 2)" style="display:block;float:left;margin-right:10px;"> 
+		<div id="name2IE"></div>
+	</div>
+	<div style="display:block;width:49%;float:left;">
+		<input type="button" maxlength=10 onClick="setName('', ' ', 3)" style="display:block;float:left;margin-right:10px;"> 
+		<div id="name3IE"></div>
+	</div>
+	<div style="clear:left;"></div>
+	</form>
+	<br><em>You may leave all names blank, but the search can only return 500 documents at a time so you would need to utilize a short date range.</em>
+
+<form name="mainForm" method=POST action="SearchResult.php" onsubmit="return valDates()" target="_parent">
+<input type=hidden name=namecode0 value="">
+<input type=hidden name=namecode1 value="">
+<input type=hidden name=namecode2 value="">
+<input type=hidden name=namecode3 value="">
+<input type=hidden name=name0 value="">
+<input type=hidden name=name1 value="">
+<input type=hidden name=name2 value="">
+<input type=hidden name=name3 value="">
+<p>List Order</p>
+<input type=radio name=rpttype value="RecordsByTime" checked> Chronology&nbsp;&nbsp;&nbsp;
+<input type=radio name=rpttype value="RecordsByType"> Document Type&nbsp;&nbsp;&nbsp;
+<input type=radio name=rpttype value="RecordsByFilm"> Reel:Frame 
+<p>Date Range</p>   
+<em>Start Date:</em> <input type=text name=start value="" maxlength=10 size=10>&nbsp;&nbsp;&nbsp;
+<em>End Date:</em> <input type=text name=end value="" maxlength=10 size=10>
+<br><br><em>Our database contains 154,913 references to documents from 1856 to 1950. Each document may contain zero, 1, or several images.
+The chart shows how many documents are in the database by year.</em>
+<img src="graphics/doc-date-range-by-year.png" style="width:100%;">
+<div style="padding:10px;border:1px solid black;background-color:orange;font-size:0.8em;">
+<strong>Please use either Firefox or Explorer for Date searches as this is not working properly in Chrome.</strong><br>
+Enter as &quot;MM/DD/YY&quot; --- do not use leading zeros except in years (examples: 6/29/78, 2/3/07). Years greater than 50 are nineteenth century; less than 50, twentieth century. For a single day enter only the start date.
+</div>
+</div>
+<div style="clear:both;"></div>
+<input type=submit value="Find Documents" style="margin-left:1em;padding:10px;font-size:1.2em;">
+</div>
+<div class="container" style="margin-left:20px;font-size:1em;width:98%;">
+<div class="drop-shadow curved h1" style="width:94%;">
+<p>Document Types</p>
+<em>You can also filter your search results by document type. You may leave all names and dates blank, but the search can only return 500 documents at a time. The total
+number of documents is listed next to each type.</em>
+<br><br>
+<center>
+	

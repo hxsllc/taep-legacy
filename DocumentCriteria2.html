@@ -1,0 +1,99 @@
+<body onLoad="setName('<?php echo $namecode;?>', '<?php echo addslashes($name);?>', -2);">
+
+<div id="header"> <a class="header-ru" href="#"><span class="offscreen">Rutgers, The State University of New Jersey</span></a> 
+
+<div class="header-taep">
+
+	<a href="/index.htm" target="_top">Project Home</a> |
+	 | <a href="/NamesSearch/NamesSearch.php" target="_top">Name/Date/Doc</a> |
+	 | <a href="/srchtext.htm" target="_top">Folder/Volume</a> |
+	 | <a href="/srchsn.htm" target="_top">Series Notes</a> |
+	 | <a href="/singldoc.htm" target="_top">Single Doc</a> |
+	 | <a href="http://rutgers.edu" target="_top">Rutgers Home</a></div>
+	 
+<table width="850" cellpadding="0" cellspacing="0" border="0" class="searchtable2"> 
+    <tr valign="top"> 
+        <td id="content">
+<h2>Advanced Search: Digital Image Edition</h2>
+<div class="important"><a href="NamesSearch3.php" target="_parent">Quick Search</a> | <a href="/srchdocs.htm" target="_blank">Help</a></div>
+<br>
+<ol style="padding-left:20px;">
+<li>To begin, you must search for a name using the name search on the left.
+<li>After you select a name on the left, it will appear below.
+<li>You can combine up to 4 name searches which will produce an AND search, not OR.
+<li>You can list the results by one of the options displayed, with date order as default.
+<li>You can additionally limit your search to a starting and end date. 
+</ol>
+<h3>Names to search for:</h3>
+<strong>
+  <form>
+  <table width="50%">
+    <tr>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 0)"></td>
+	  <td><div id="name0IE">&nbsp;&nbsp;&nbsp;</div>
+	</td>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 1)">
+	  </td>
+	  <td><div id="name1IE"></div>
+	  </td>
+    </tr>
+    <tr>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 2)">
+	  </td>
+	  <td><div id="name2IE"></div>
+	  </td>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 3)">
+	  </td>
+	  <td><div id="name3IE"></div>
+	  </td>
+	</tr>
+  </table>
+  </form>
+  </strong></p>
+<em>You may leave all names blank, but the search can only return 500 documents at a time so you will need to utilize a short date range.
+</em>
+
+  <form name="mainForm" method=POST action="SearchResult.php" onsubmit="return valDates()" target=_parent>
+
+    <input type=hidden name=namecode0 value="">
+    <input type=hidden name=namecode1 value="">
+    <input type=hidden name=namecode2 value="">
+    <input type=hidden name=namecode3 value="">
+
+    <input type=hidden name=name0 value="">
+    <input type=hidden name=name1 value="">
+    <input type=hidden name=name2 value="">
+    <input type=hidden name=name3 value="">
+
+<p>    <h3>List by:</h3>
+
+      <input type=radio name=rpttype value="RecordsByTime" checked> Chronology&nbsp;&nbsp;&nbsp;
+      <input type=radio name=rpttype value="RecordsByType"> Document Type&nbsp;&nbsp;&nbsp;
+      <input type=radio name=rpttype value="RecordsByFilm"> Reel:Frame
+</p>
+
+<h3>Date range:</h3>
+
+<p>    <em>Start Date:</em> <input type=text name=start value="" maxlength=10 size=10>&nbsp;&nbsp;&nbsp;
+      <em>End Date:</em> <input type=text name=end value="" maxlength=10 size=10>
+</p>
+<em>Our database contains 154,913 references to documents spanning the years 1856-1950. Each document may contain zero, 1, or several images.
+The graphic below visualizes how many documents are in the database by year.
+<br>
+<img src="graphics/doc-date-range-by-year.png" style="width:790px;">
+<br>
+<div style="padding:10px;border:1px solid black;background-color:orange;">
+<p>   <strong>Please use either Firefox or Explorer for Date searches as this is not working properly in Chrome.</strong><be><br>
+      Enter as &quot;MM/DD/YY&quot; --- do not use leading zeros except in years (examples:
+      6/29/78, 2/3/07). Years greater than 50 are nineteenth century; less than 50, twentieth century. For a single day enter only the start date.
+</p>   
+</div>
+    <br>
+<input type=submit value="Find Documents" style="padding:15px;font-size:1.4em;">
+<p>
+<em>You can also filter your search results by document type. You may leave all names and dates blank, but the search can only return 500 documents at a time. The total
+number of documents is listed next to each type.
+    <h3>Document types:</h3>
+
+    <center>
+	

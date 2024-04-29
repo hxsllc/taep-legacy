@@ -1,0 +1,78 @@
+<body onLoad="setName('<?php echo $namecode;?>', '<?php echo addslashes($name);?>', -2);">
+
+<div id="header"> <a class="header-ru" href="#"><span class="offscreen">Rutgers, The State University of New Jersey</span></a> 
+
+<div class="header-taep">
+
+	<a href="/index.htm" target="_top">Project Home</a> |
+	 | <a href="/NamesSearch/NamesSearch.php" target="_top">Name/Date/Doc</a> |
+	 | <a href="/srchtext.htm" target="_top">Folder/Volume</a> |
+	 | <a href="/srchsn.htm" target="_top">Series Notes</a> |
+	 | <a href="/singldoc.htm" target="_top">Single Doc</a> |
+	 | <a href="http://rutgers.edu" target="_top">Rutgers Home</a></div>
+	 
+<iframe name="NameSearchForm" src="SearchForm2.php" style="float:right;width:30%;min-height:500px;overflow-y:scroll;margin-right:30px;"></iframe>
+<table width="66%" cellpadding="0" cellspacing="0" border="0" class="searchtable2" style="float:left;"> 
+    <tr valign="top"> 
+        <td id="content">
+<h2>Advanced Search: Digital Image Edition</h2>
+<div class="important"><a href="NamesSearch2.php">Search with Instructions</a> | <a href="/srchdocs.htm" target="_blank">Help</a></div>
+<br>
+<h3>Search parameters:</h3>
+<strong>
+  <form>
+  <table width="50%">
+    <tr>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 0)"></td>
+	  <td><div id="name0IE">&nbsp;&nbsp;&nbsp;</div>
+	</td>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 1)">
+	  </td>
+	  <td><div id="name1IE"></div>
+	  </td>
+    </tr>
+    <tr>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 2)">
+	  </td>
+	  <td><div id="name2IE"></div>
+	  </td>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 3)">
+	  </td>
+	  <td><div id="name3IE"></div>
+	  </td>
+	</tr>
+  </table>
+  </form>
+  </strong></p>
+
+  <form name="mainForm" method=POST action="SearchResult.php" onsubmit="return valDates()" target=_parent>
+
+    <input type=hidden name=namecode0 value="">
+    <input type=hidden name=namecode1 value="">
+    <input type=hidden name=namecode2 value="">
+    <input type=hidden name=namecode3 value="">
+
+    <input type=hidden name=name0 value="">
+    <input type=hidden name=name1 value="">
+    <input type=hidden name=name2 value="">
+    <input type=hidden name=name3 value="">
+
+<p>
+
+      <input type=radio name=rpttype value="RecordsByTime" checked> Chronology&nbsp;&nbsp;&nbsp;
+      <input type=radio name=rpttype value="RecordsByType"> Document Type&nbsp;&nbsp;&nbsp;
+      <input type=radio name=rpttype value="RecordsByFilm"> Reel:Frame
+</p>
+
+
+<p>    <em>Start Date:</em> <input type=text name=start value="" maxlength=10 size=10>&nbsp;&nbsp;&nbsp;
+      <em>End Date:</em> <input type=text name=end value="" maxlength=10 size=10>
+</p>
+</div>
+    <br>
+<input type=submit value="Find Documents" style="padding:15px;font-size:1.4em;">
+<p>
+    <h3>Document types:</h3>
+
+    <center>
+	

@@ -1,0 +1,86 @@
+<body onLoad="setName('<?php echo $namecode;?>', '<?php echo addslashes($name);?>', -2);">
+
+<div id="header"> <a class="header-ru" href="#"><span class="offscreen">Rutgers, The State University of New Jersey</span></a> 
+
+<div class="header-taep">
+
+	<a href="http://edison.rutgers.edu" target="_blank">Project Home</a> |
+	 | <a href="/NamesSearch.php" target="_top">Name/Date/Doc</a> |
+	 | <a href="/srchtext.htm" target="_top">Folder/Volume</a> |
+	 | <a href="/srchsn.htm" target="_top">Series Notes</a> |
+	 | <a href="/singldoc.htm" target="_top">Single Doc</a> |
+	 | <a href="http://rutgers.edu" target="_blank">Rutgers Home</a></div>
+	 
+<table width="750" cellpadding="0" cellspacing="0" border="0" class="searchtable"> 
+    <tr valign="top"> 
+        <td id="content">
+<h2>Search Method: Name/Date/Document Type Search</h2>
+<div class="important"><a href="/srchdocs.htm" target="_blank">Full Instructions for Name/Date/Document Type Search </a></div>
+<!--
+<h2 style="font-size:2em;" class="red">Currently undergoing maintenance 11/5/2017 - please check back in 1 hour</h2>
+-->
+<p class="red">Note:	Select a name, click the "Find Documents" button. You can enter up to four names, but in that case only those documents associated with all names will be returned.
+</p>
+
+<p>Press Button to delete name  </p>
+<strong>
+  <form>
+  <table width="50%">
+    <tr>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 0)"></td>
+	  <td><div id="name0IE">&nbsp;&nbsp;&nbsp;</div>
+	</td>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 1)">
+	  </td>
+	  <td><div id="name1IE"></div>
+	  </td>
+    </tr>
+    <tr>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 2)">
+	  </td>
+	  <td><div id="name2IE"></div>
+	  </td>
+	  <td width="1"><input type="button" maxlength=10 onClick="setName('', ' ', 3)">
+	  </td>
+	  <td><div id="name3IE"></div>
+	  </td>
+	</tr>
+  </table>
+  </form>
+  </strong></p>
+
+
+  <form name="mainForm" method=POST action="SearchResult.php" onsubmit="return valDates()" target=_parent>
+
+    <input type=hidden name=namecode0 value="">
+    <input type=hidden name=namecode1 value="">
+    <input type=hidden name=namecode2 value="">
+    <input type=hidden name=namecode3 value="">
+
+    <input type=hidden name=name0 value="">
+    <input type=hidden name=name1 value="">
+    <input type=hidden name=name2 value="">
+    <input type=hidden name=name3 value="">
+
+<p>    <em>List by</em>
+
+      <input type=radio name=rpttype value="RecordsByTime" checked> Chronology&nbsp;&nbsp;&nbsp;
+      <input type=radio name=rpttype value="RecordsByType"> Document Type&nbsp;&nbsp;&nbsp;
+      <input type=radio name=rpttype value="RecordsByFilm"> Reel:Frame
+</p>
+
+<p>    <strong>Dates:</strong> <strong>Please use either Firefox or Explorer for Date searches as this is not working properly in Chrome.</strong><be><br>
+      Enter as &quot;MM/DD/YY&quot; --- do not use leading zeros except in years (examples:
+      6/29/78, 2/3/07). Years greater than 50 are nineteenth century; less than 50, twentieth century. For a single day enter only the start date.
+</p>    
+
+<p>    <em>Start Date:</em> <input type=text name=start value="" maxlength=10 size=10>&nbsp;&nbsp;&nbsp;
+      <em>End Date:</em> <input type=text name=end value="" maxlength=10 size=10>
+</p>
+    
+	<center><input type=submit value="Find Documents">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name=clrDocsType value="Clear Checkboxes" onClick="clrDocs()" ></center>
+
+    <p><strong>Document types:</strong></p>
+
+    <center>
+	

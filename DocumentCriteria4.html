@@ -1,0 +1,60 @@
+<iframe name="NameSearchForm" src="SearchForm2.php" style="float:right;width:29%;min-height:500px;overflow-y:scroll;margin-right:30px;" frameborder=0 class="drop-shadow curved h1"></iframe>
+<div class="container" style="margin-left:20px;font-size:1em;float:left;width:63%;">
+<h2>Advanced Search: Digital Image Edition</h2>
+<div class="important"><a href="NamesSearch2.php">Search with Instructions</a> | <a href="/srchdocs.htm" target="_blank">Help</a></div>
+<form style="margin-bottom:0;">
+<div class="drop-shadow curved h1">
+<p>Person or Company</p>
+<div style="display:block;width:90%;">
+	<input type="button" maxlength=10 onClick="setName('', ' ', 0)" style="display:block;float:left;margin-right:10px;"> 
+	<div id="name0IE"></div>
+</div>
+<div style="clear:left;"></div>
+<div style="display:block;width:90%;">
+	<input type="button" maxlength=10 onClick="setName('', ' ', 1)" style="display:block;float:left;margin-right:10px;"> 
+	<div id="name1IE"></div>
+</div>
+<div style="clear:left;"></div>
+<div style="display:block;width:90%;">
+	<input type="button" maxlength=10 onClick="setName('', ' ', 2)" style="display:block;float:left;margin-right:10px;"> 
+	<div id="name2IE"></div>
+</div>
+<div style="clear:left;"></div>
+<div style="display:block;width:90%;">
+	<input type="button" maxlength=10 onClick="setName('', ' ', 3)" style="display:block;float:left;margin-right:10px;"> 
+	<div id="name3IE"></div>
+</div>
+<div style="clear:left;"></div>
+</div>
+<div style="clear:both;"></div>
+</form>
+<form name="mainForm" method=POST action="SearchResult.php" onsubmit="return valDates()" target="_parent">
+<input type=hidden name=namecode0 value="">
+<input type=hidden name=namecode1 value="">
+<input type=hidden name=namecode2 value="">
+<input type=hidden name=namecode3 value="">
+<input type=hidden name=name0 value="">
+<input type=hidden name=name1 value="">
+<input type=hidden name=name2 value="">
+<input type=hidden name=name3 value="">
+<div class="drop-shadow curved h1">
+<p>List Order</p>
+<input type=radio name=rpttype value="RecordsByTime" checked> Chronology&nbsp;&nbsp;&nbsp;
+<input type=radio name=rpttype value="RecordsByType"> Document Type&nbsp;&nbsp;&nbsp;
+<input type=radio name=rpttype value="RecordsByFilm"> Reel:Frame
+</div>
+<div style="clear:both;"></div>
+<div class="drop-shadow curved h1">
+<p>Date Range</p>   
+<em>Start Date:</em> <input type=text name=start value="" maxlength=10 size=10>&nbsp;&nbsp;&nbsp;
+<em>End Date:</em> <input type=text name=end value="" maxlength=10 size=10>
+</div>
+<div style="clear:both;"></div>
+<br>
+<input type=submit value="Find Documents" style="margin-left:1em;padding:10px;font-size:1.2em;">
+</div>
+<div class="container" style="margin-left:20px;font-size:1em;width:98%;">
+<div class="drop-shadow curved h1" style="width:94%;">
+<p>Document Types</p>
+<center>
+	
